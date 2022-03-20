@@ -18,7 +18,7 @@ package v4
 
 import (
 	"sigs.k8s.io/kubebuilder/v3/pkg/config"
-	cfgv3 "sigs.k8s.io/kubebuilder/v3/pkg/config/v3"
+	cfgv4 "sigs.k8s.io/kubebuilder/v3/pkg/config/v4"
 	"sigs.k8s.io/kubebuilder/v3/pkg/plugin"
 	"sigs.k8s.io/kubebuilder/v3/pkg/plugins/golang"
 )
@@ -27,7 +27,7 @@ const pluginName = "base." + golang.DefaultNameQualifier
 
 var (
 	pluginVersion            = plugin.Version{Number: 4}
-	supportedProjectVersions = []config.Version{cfgv3.Version}
+	supportedProjectVersions = []config.Version{cfgv4.Version}
 )
 
 var _ plugin.Full = Plugin{}
