@@ -1,9 +1,9 @@
 componentConfig: true
 domain: testproject.org
 layout:
-- go.kubebuilder.io/v3
-projectName: project-v3-config
-repo: sigs.k8s.io/kubebuilder/testdata/project-v3-config
+- go.kubebuilder.io/v4
+projectName: project-v4-config
+repo: sigs.k8s.io/kubebuilder/testdata/project-v4-config
 resources:
 - api:
     crdVersion: v1
@@ -12,7 +12,7 @@ resources:
   domain: testproject.org
   group: crew
   kind: Captain
-  path: sigs.k8s.io/kubebuilder/testdata/project-v3-config/api/v1
+  path: sigs.k8s.io/kubebuilder/testdata/project-v4-config/api/v1
   version: v1
   webhooks:
     defaulting: true
@@ -25,7 +25,7 @@ resources:
   domain: testproject.org
   group: crew
   kind: FirstMate
-  path: sigs.k8s.io/kubebuilder/testdata/project-v3-config/api/v1
+  path: sigs.k8s.io/kubebuilder/testdata/project-v4-config/api/v1
   version: v1
   webhooks:
     conversion: true
@@ -36,7 +36,7 @@ resources:
   domain: testproject.org
   group: crew
   kind: Admiral
-  path: sigs.k8s.io/kubebuilder/testdata/project-v3-config/api/v1
+  path: sigs.k8s.io/kubebuilder/testdata/project-v4-config/api/v1
   version: v1
   webhooks:
     defaulting: true
@@ -46,4 +46,4 @@ resources:
   group: crew
   kind: Laker
   version: v1
-version: "3"
+version: "4"

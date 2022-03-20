@@ -131,3 +131,8 @@ scaffold_test_project project-v3-multigroup
 scaffold_test_project project-v3-addon --plugins="go/v3,declarative"
 scaffold_test_project project-v3-config --component-config
 scaffold_test_project project-v3-v1beta1
+# Project version 4 (default) uses plugin go/v4 (default).
+scaffold_test_project project-v4
+scaffold_test_project project-v4-multigroup
+scaffold_test_project project-v4-addon --plugins="go/v4,declarative"
+scaffold_test_project project-v4-config --component-config
