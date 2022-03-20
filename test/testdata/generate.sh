@@ -45,12 +45,12 @@ function scaffold_test_project {
   header_text "Initializing project ..."
   $kb init $init_flags --domain testproject.org --license apache2 --owner "The Kubernetes authors"
 
-  if [ $project == "project-v2" ] || [ $project == "project-v3" ] || [ $project == "project-v3-config" ]; then
+  if [ $project == "project-v2" ] || [ $project == "project-v3" ] || [ $project == "project-v3-config" ] || [ $project == "project-v4" ] || [ $project == "project-v4-config" ]; then
     header_text 'Creating APIs ...'
     $kb create api --group crew --version v1 --kind Captain --controller=true --resource=true --make=false
     $kb create api --group crew --version v1 --kind Captain --controller=true --resource=true --make=false --force
     $kb create webhook --group crew --version v1 --kind Captain --defaulting --programmatic-validation
-    if [ $project == "project-v3" ]; then
+    if [ $project == "project-v3" ] || [ $project == "project-v4" ]; then
       $kb create webhook --group crew --version v1 --kind Captain --defaulting --programmatic-validation --force
     fi
 
@@ -61,7 +61,7 @@ function scaffold_test_project {
     fi
     $kb create webhook --group crew --version v1 --kind FirstMate --conversion
 
-    if [ $project == "project-v3" ]; then
+    if [ $project == "project-v3" ] || [ $project ==  "project-v4" ]; then
       $kb create api --group crew --version v1 --kind Admiral --plural=admirales --controller=true --resource=true --namespaced=false --make=false
       $kb create webhook --group crew --version v1 --kind Admiral --plural=admirales --defaulting
     else
@@ -98,7 +98,7 @@ function scaffold_test_project {
     $kb create api --group foo --version v1 --kind Bar --controller=true --resource=true --make=false
     $kb create api --group fiz --version v1 --kind Bar --controller=true --resource=true --make=false
 
-    if [ $project == "project-v3-multigroup" ]; then
+    if [ $project == "project-v3-multigroup" ] || [ $prpoject == "project-v4-multigroup" ]; then
       $kb create api --version v1 --kind Lakers --controller=true --resource=true --make=false
       $kb create webhook --version v1 --kind Lakers --defaulting --programmatic-validation
     fi
